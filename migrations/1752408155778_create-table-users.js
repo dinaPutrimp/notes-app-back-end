@@ -1,25 +1,27 @@
-export const up = (pgm) => {
-  pgm.createTable('users', {
+const up = (pgm) => {
+  pgm.createTable("users", {
     id: {
-      type: 'VARCHAR(50)',
+      type: "VARCHAR(50)",
       primaryKey: true,
     },
     username: {
-      type: 'VARCHAR(50)',
+      type: "VARCHAR(50)",
       unique: true,
       notNull: true,
     },
     password: {
-      type: 'TEXT',
+      type: "TEXT",
       notNull: true,
     },
     fullname: {
-      type: 'TEXT',
+      type: "TEXT",
       notNull: true,
     },
   });
 };
- 
-export const down = (pgm) => {
-  pgm.dropTable('users');
+
+const down = (pgm) => {
+  pgm.dropTable("users");
 };
+
+module.exports = { up, down };
