@@ -112,10 +112,8 @@ class NotesService {
       }
 
       try {
-        console.log("masuk sini");
         await this._collaborationsService.verifyCollaborator(noteId, userId);
       } catch (error) {
-        console.log("masuk sini 2");
         throw error;
       }
     }
